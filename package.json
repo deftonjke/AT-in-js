@@ -2,12 +2,19 @@
   "name": "at-in-js",
   "type": "module",
   "scripts": {
-    "test": "wdio run wdio.conf.js"
+    "test": "wdio run wdio.conf.js",
+    "test:first": "wdio run wdio.conf.js --cucumberOpts.tagExpression='@first'",
+    "test:second": "wdio run wdio.conf.js --cucumberOpts.tagExpression='@second'",
+    "test:third": "wdio run wdio.conf.js --cucumberOpts.tagExpression='@third'",
+    "test:four": "wdio run wdio.conf.js --cucumberOpts.tagExpression='@four'"
   },
   "devDependencies": {
     "@wdio/cli": "^9.11.0",
     "@wdio/cucumber-framework": "^9.11.0",
     "@wdio/local-runner": "^9.11.0",
     "@wdio/spec-reporter": "^9.11.0"
+  },
+  "dependencies": {
+    "dotenv": "^16.4.7"
   }
 }

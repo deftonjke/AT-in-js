@@ -1,3 +1,6 @@
+import dotenv from "dotenv";
+dotenv.config();
+
 export const config = {
     //
     // ====================
@@ -49,25 +52,29 @@ export const config = {
     // Sauce Labs platform configurator - a great tool to configure your capabilities:
     // https://saucelabs.com/platform/platform-configurator
     //
-    capabilities: [{
-        browserName: 'chrome',
-        acceptInsecureCerts: true,
-        'goog:chromeOptions': {
-            args: ['headless']
+    capabilities: [
+        {
+            browserName: 'chrome',
+            acceptInsecureCerts: true,
+            'goog:chromeOptions': {
+                args: ["headless", "--window-size=1280,1024"]
+            }
+        },
+        {
+            browserName: 'firefox',
+            acceptInsecureCerts: true,
+            'moz:firefoxOptions': {
+                args: ["-headless", "--window-size=1280,1024"]
+            }
+        },
+        {
+            browserName: 'msedge',
+            acceptInsecureCerts: true,
+            'ms:edgeOptions': {
+                args: ["--headless", "--window-size=1280,1024"]
+            }
+            // add flag "--edge-skip-compat-layer-relaunch" instead of running as administrator (if there is problem with profile)
         }
-    }, {
-        browserName: 'firefox',
-        acceptInsecureCerts: true,
-        'moz:firefoxOptions': {
-            args: ['-headless']
-        }
-    }, {
-        browserName: 'msedge',
-        acceptInsecureCerts: true,
-        'ms:edgeOptions': {
-            args: ['--headless']
-        }
-    }
     ],
 
     //
@@ -77,7 +84,7 @@ export const config = {
     // Define all options that are relevant for the WebdriverIO instance here
     //
     // Level of logging verbosity: trace | debug | info | warn | error | silent
-    logLevel: 'warn',
+    logLevel: 'error',
     //
     // Set specific log levels per logger
     // loggers:
@@ -101,7 +108,7 @@ export const config = {
     // with `/`, the base url gets prepended, not including the path portion of your baseUrl.
     // If your `url` parameter starts without a scheme or `/` (like `some/path`), the base url
     // gets prepended directly.
-    // baseUrl: 'http://localhost:8080',
+    baseUrl: 'https://trello.com',
     //
     // Default timeout for all waitFor* commands.
     waitforTimeout: 10000,
