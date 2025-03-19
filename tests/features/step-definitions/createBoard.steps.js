@@ -1,16 +1,10 @@
-import { Given, When, Then, After } from '@wdio/cucumber-framework';
+import { When, Then, After } from '@wdio/cucumber-framework';
 import { expect, $, browser } from '@wdio/globals'
 
-Given('a user is logged into their account1', async function () {
-    await browser.url(process.env.LOGIN_PAGE);
-    await $('[data-testid="username"]').setValue(process.env.TEST_EMAIL)
-    await $('#login-submit').click()
-    await $('[data-testid="password"]').setValue(process.env.TEST_PASSWORD)
-    await $('#login-submit').click()
-})
-
 When('the user creates a new board with valid data', async function (dataTable) {
-    await $('[data-testid="header-create-menu-button"]').click()
+    const createButton = $('[data-testid="header-create-menu-button"]');
+    await createButton.waitForDisplayed()
+    await createButton.click()
     await $('[data-testid="header-create-board-button"]').click()
     await $('[data-testid="create-board-title-input"]').setValue(`${dataTable.hashes()[0].boardName + Date.now()}`)
     await $('[data-testid="create-board-submit-button"]').waitForClickable()

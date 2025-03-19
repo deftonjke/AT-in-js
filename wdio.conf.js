@@ -57,21 +57,21 @@ export const config = {
             browserName: 'chrome',
             acceptInsecureCerts: true,
             'goog:chromeOptions': {
-                args: ["headless", "--window-size=1280,1024"]
+                args: ["--headless", "--window-size=1920,1080", "--user-agent='Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36'"]
             }
         },
         {
             browserName: 'firefox',
             acceptInsecureCerts: true,
             'moz:firefoxOptions': {
-                args: ["-headless", "--window-size=1280,1024"]
+                args: ["-headless", "--window-size=1920,1080"]
             }
         },
         {
             browserName: 'msedge',
             acceptInsecureCerts: true,
             'ms:edgeOptions': {
-                args: ["--headless", "--window-size=1280,1024"]
+                args: ["--headless", "--window-size=1920,1080"]
             }
             // add flag "--edge-skip-compat-layer-relaunch" instead of running as administrator (if there is problem with profile)
         }
@@ -172,7 +172,7 @@ export const config = {
         // <string> (expression) only execute the features or scenarios with tags matching the expression
         tagExpression: '',
         // <number> timeout for step definitions
-        timeout: 60000,
+        timeout: 160000,
         // <boolean> Enable this config to treat undefined definitions as warnings.
         ignoreUndefinedDefinitions: false,
         retry: 2

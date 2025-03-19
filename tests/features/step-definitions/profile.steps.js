@@ -1,19 +1,8 @@
 import { Given, When, Then, After } from '@wdio/cucumber-framework';
 import { expect, $, browser } from '@wdio/globals'
 
-Given('a user is logged into their account', async function () {
-    await browser.url(process.env.LOGIN_PAGE);
-    const hasNotToken = !(await browser.getCookies(['cloud.session.token'])).length;
-
-    if (hasNotToken) {
-        await $('[data-testid="username"]').setValue(process.env.TEST_EMAIL)
-        await $('#login-submit').click()
-        await $('[data-testid="password"]').setValue(process.env.TEST_PASSWORD)
-        await $('#login-submit').click()
-    }
-})
-
 Given('a user navigated to the profile page', async function () {
+    $('[data-testid="header-member-menu-button"]').waitForDisplayed()
     $('[data-testid="header-member-menu-button"]').click()
     $('[data-testid="account-menu-profile"]').click()
 })

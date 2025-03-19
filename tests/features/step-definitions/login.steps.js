@@ -15,5 +15,5 @@ When('the user logs in with valid credentials', async function () {
 
 Then('the user should be redirected to their board page', async function () {
     await $('h3.boards-page-section-header-name').waitForDisplayed();
-    await expect(browser).toHaveUrl(expect.stringContaining(process.env.BOARD_PAGE))
+    await expect(browser).toHaveUrl(expect.stringContaining(process.env.BOARDS_PAGE))
 })

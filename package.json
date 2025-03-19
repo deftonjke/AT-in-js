@@ -6,7 +6,11 @@
     "test:first": "wdio run wdio.conf.js --cucumberOpts.tagExpression='@first'",
     "test:second": "wdio run wdio.conf.js --cucumberOpts.tagExpression='@second'",
     "test:third": "wdio run wdio.conf.js --cucumberOpts.tagExpression='@third'",
-    "test:four": "wdio run wdio.conf.js --cucumberOpts.tagExpression='@four'"
+    "test:fourth": "wdio run wdio.conf.js --cucumberOpts.tagExpression='@fourth'",
+    "test:fifth": "wdio run wdio.conf.js --cucumberOpts.tagExpression='@fifth'",
+    "test:sixth": "wdio run wdio.conf.js --cucumberOpts.tagExpression='@sixth'",
+    "test:seventh": "wdio run wdio.conf.js --cucumberOpts.tagExpression='@seventh'",
+    "test:eighth": "wdio run wdio.conf.js --cucumberOpts.tagExpression='@eighth'"
   },
   "devDependencies": {
     "@wdio/cli": "^9.11.0",
